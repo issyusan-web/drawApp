@@ -1,0 +1,330 @@
+@charset "UTF-8";
+
+/* 画像全般に対して */
+img {
+	/* 横幅を指定 */
+	width: 200px;
+	/* 縦横比を自動で維持 */
+	height: auto;
+}
+
+/* admin.jspの「ホームに戻る」画像に対して */
+img.home {
+	/* 横幅を指定 */
+	width: 355px;
+	/* 縦横比を自動で維持 */
+	height: 125px;
+}
+
+/* class="center" */
+.center {
+	display: flex;
+	/* 横方向中央 */
+	justify-content: center;
+	gap: 20px;
+}
+
+/* 各ページ見出しに対して */
+/* class="headline" */
+.headline {
+	display: inline-block;
+	/* 青背景(グラデーションにしてる) */
+	background: linear-gradient(90deg, #1976D2, #1E88E5);
+	/* 白文字 */
+	color: white;
+	/* 文字サイズ */
+	font-size: 54px;
+	/*	フォントの種類*/
+	font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
+	/* 文字の太さ */
+	font-weight: 600;
+	/* 上下左右の余白 */
+	padding: 15px 30px;
+	/* 角丸の大きさ。 */
+	border-radius: 30px;
+	/* 文字間隔の調整 */
+	letter-spacing: 4px;
+	text-align: center;
+	/* 横一行に固定 */
+	white-space: nowrap;
+}
+
+/* 各ページ「管理者画面に戻る」に対して */
+/* class="returnadmin" */
+.returnadmin {
+	display: inline-block;
+	/* 青背景(グラデーションにしてる) */
+	background: linear-gradient(90deg, #1976D2, #1E88E5);
+	/* 白文字 */
+	color: white;
+	/* 文字サイズ */
+	font-size: 15px;
+	/*	フォントの種類*/
+	font-family: "M PLUS Rounded 1c", "Noto Sans JP", sans-serif;
+	/* 文字の太さ */
+	font-weight: 600;
+	/* 上下左右の余白 */
+	padding: 15px 30px;
+	/* 角丸の大きさ。 */
+	border-radius: 30px;
+	/* 文字間隔の調整 */
+	letter-spacing: 4px;
+	/* 文字を中央に */
+	text-align: center;
+	/* 横一行に固定 */
+	white-space: nowrap;
+}
+
+/* リンクに対して */
+a {
+	/* 下線を消す */
+	text-decoration: none;
+}
+
+/* リンク画像に対して */
+a img {
+	/* アニメーションの速度・滑らかさ */
+	transition: transform 0.2s ease;
+}
+
+/* リンクをホバーする時 */
+a:hover {
+	/* マウスを乗せた時だけ下線表示 */
+	text-decoration: underline;
+	/* 1.1倍に拡大（大きすぎたら 1.05 など微調整） */
+	transform: scale(1.1);
+}
+
+/* 登録、削除で一覧表示する時 */
+/* ★Flexboxで5列並び */
+.container {
+	display: flex;
+	/* 自動で折り返す */
+	flex-wrap: wrap;
+	/* 中央寄せ */
+	justify-content: center;
+	/* 各要素の間隔 */
+	gap: 10px;
+}
+
+/* ★各カードのデザイン */
+.member-box {
+	border: 1px solid #000;
+	/* 横5つ並ぶように調整（100 ÷ 5 ＝ 20 → 少し余白を引く） */
+	width: 18%;
+	box-sizing: border-box;
+	text-align: center;
+	padding: 5px 8px;
+	line-height: 0.2;
+}
+
+/* エラーメッセージを赤で、太くする */
+.error {
+	color: red;
+	font-weight: bold;
+}
+
+/* 成功メッセージを緑で、太くする */
+.success {
+	color: green;
+	font-weight: bold;
+}
+
+input[type="submit"] {
+	/* ボタン色 */
+	background-color: #1976D2;
+	/* 文字色 */
+	color: white;
+	/* 内側余白 */
+	padding: 10px 20px;
+	/* 枠なし */
+	border: none;
+	/* 角丸 */
+	border-radius: 10px;
+	/* 文字サイズ */
+	font-size: 18px;
+	/* マウスホバーで手マーク */
+	cursor: pointer;
+	/* アニメーション */
+	transition: 0.2s ease;
+}
+
+table th,
+table td {
+	padding: 10px 15px;
+	/* 上下10px、左右15px の余白 */
+}
+
+/* 外枠のカード */
+.member-icon {
+	/* 枠色（css変数。--から始めて、変数名をつける） */
+	/* 取り出す時は、var()とする。 */
+	--blue: #1A78D6;
+	/* 横並びで自然に配置 */
+	display: inline-flex;
+	/* 上下に積む */
+	flex-direction: column;
+	/* 横方向の中央寄せ */
+	align-items: center;
+	/* 中央寄せ */
+	justify-content: center;
+
+	/* 中身に合わせた余白 */
+	padding: 16px 20px;
+	/* 青い太枠 */
+	border: 7px solid var(--blue);
+	/* 角丸 */
+	border-radius: 30px;
+	/* 背景色（白） */
+	background: #fff;
+	/* 中の文字やアイコンの色を青に統一 */
+	color: var(--blue);
+
+	/* 横幅 */
+	width: auto;
+	/* 高さ */
+	height: auto;
+	/* 枠同士の間隔 */
+	margin: 10px;
+	/* 文字の太さを指定 */
+	font-weight: bold;
+}
+
+.member-container {
+	display: flex;
+	/* 折り返し */
+	flex-wrap: wrap;
+	justify-content: left;
+	/* 間隔 */
+	gap: 10px;
+}
+
+.member-choice {
+	--blue: #1A78D6;
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 18px 28px;
+
+	/* 普段より少し太い枠 */
+	border: 8px solid var(--blue);
+	border-radius: 30px;
+
+	/* 外側に白縁を付けて背景白でも見やすくする */
+	box-shadow:
+		/* 外側の白縁 */
+		0 0 0 4px #ffffff,
+		/* 金色の柔らかい光 */
+		0 0 20px rgba(255, 215, 0, 0.6);
+
+	background: #fff;
+	color: var(--blue);
+	font-weight: bold;
+
+	font-size: 100px;
+	/* この要素を座標の基準にする */
+	position: relative;
+	/* ポップ感ある演出（ほんの少し拡大） */
+	animation: pop 0.4s ease-out;
+}
+
+@keyframes pop {
+	0% {
+		transform: scale(0.85);
+		opacity: 0;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.choice-center {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ==== 終了メンバーの浮遊アニメーション ==== */
+.finished-area {
+	position: relative;
+	width: 100%;
+	height: 300px;
+	/* 移動範囲（調整OK） */
+	overflow: hidden;
+	border: none;
+	/* 必要なら可視化できる */
+}
+
+.finished-mover {
+	position: absolute;
+	padding: 16px 20px;
+	border: 7px solid #1A78D6;
+	border-radius: 30px;
+	background: #fff;
+	color: #1A78D6;
+	font-weight: bold;
+	white-space: nowrap;
+	user-select: none;
+}
+
+/* 全画面クラッカー用 */
+.confetti-area {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	overflow: hidden;
+	z-index: 9999;
+}
+
+.confetti {
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	width: 10px;
+	height: 16px;
+	border-radius: 3px;
+	opacity: 0;
+
+	/* 飛ぶ量（JSで個別指定） */
+	--tx: 0px;
+	--ty: 0px;
+
+	animation: confetti-burst 1.2s ease-out forwards;
+}
+
+.confetti:nth-child(4n) {
+	background: #FF5252;
+}
+
+.confetti:nth-child(4n+1) {
+	background: #FFD600;
+}
+
+.confetti:nth-child(4n+2) {
+	background: #1A78D6;
+}
+
+.confetti:nth-child(4n+3) {
+	background: #FF7BAC;
+}
+
+@keyframes confetti-burst {
+	0% {
+		transform: translate(0, 0) scale(0.3) rotate(0);
+		opacity: 1;
+	}
+
+	60% {
+		transform: translate(var(--tx), var(--ty)) scale(1) rotate(540deg);
+	}
+
+	100% {
+		transform: translate(calc(var(--tx)*1.2), calc(var(--ty)+80px)) rotate(720deg);
+		opacity: 0;
+	}
+}
