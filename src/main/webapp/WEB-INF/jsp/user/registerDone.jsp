@@ -12,7 +12,7 @@
 	<h1 class="headline">ユーザー登録完了</h1>
 	<h2 class="center">ユーザー登録が完了しました</h2>
 	<p class="center">
-		<a class="returnadmin" href="${pageContext.request.contextPath}/login">ログイン画面に戻る</a>
+		<a class="returnadmin" href="${pageContext.request.contextPath}/login">ログイン画面へ</a>
 	</p>
 </body>
 </html>
