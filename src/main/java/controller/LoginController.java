@@ -18,7 +18,7 @@ import service.UserLoginService;
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	//index.jspから遷移するメソッド。
+	//about.jspから遷移するメソッド。
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//login.jspへ遷移
